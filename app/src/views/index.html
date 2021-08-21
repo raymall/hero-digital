@@ -4,55 +4,57 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <%= require('html-loader!../partials/head.html') %>
   </head>
-  <body>
+  <body class="Homepage">
     <!-- <img src="assets/[image-name].[image-extension]]"/> -->
     <main>
       <form class="Form grid-container full" action="">
         <div class="grid-x grid-padding-x">
-          <h1>Sign up for email updates</h1>
-          <p>*Indicates Required Field</p>
-          <div class="Form-errors">
-            <span>{{field name}} is required</span>
+          <div class="cell large-12">
+            <h1>Sign up for email updates</h1>
+            <p>*Indicates Required Field</p>
+            <div class="Form-errors form-errors">
+              <span>{{field name}} is required</span>
+            </div>
           </div>
         </div>
         <fieldset class="grid-x grid-padding-x">
-          <div class="Form-field cell small-12 large-6">
+          <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="first-name">First Name*</label>
             <input type="text" name="first-name" placeholder="John" required>
           </div>
-          <div class="Form-field cell small-12 large-6">
+          <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="last-name">Last Name*</label>
             <input type="text" name="last-name" placeholder="Doe" required>
           </div>
-          <div class="Form-field cell small-12 large-6">
+          <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="email-address">Email Address*</label>
             <input type="email" name="email-address" placeholder="john.doe@gmail.com" required>
           </div>
-          <div class="Form-field cell small-12 large-6">
+          <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="organization">Organization</label>
             <input type="text" name="organization" placeholder="">
           </div>
-          <div class="Form-field cell small-12 large-12">
+          <div class="Form-field cell large-12">
             <label for="eu-resident">EU Resident*</label>
-            <select name="eu-resident" id="">
-              <option value="- Select One -"></option>
+            <select name="eu-resident" id="" required>
+              <option value="">- Select One -</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
           </div>
-          <div class="Form-field cell small-12 large-6">
+          <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
             <label for="advances">
               <input id="advances" type="checkbox" name="preferences[]">
               <span>Advances</span>
             </label>
           </div>
-          <div class="Form-field cell small-12 large-6">
+          <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
             <label for="alerts">
               <input id="alerts" type="checkbox" name="preferences[]">
               <span>Alerts</span>
             </label>
           </div>
-          <div class="Form-field cell small-12 large-6">
+          <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
             <label for="other-communications">
               <input id="other-communications" type="checkbox" name="preferences[]">
               <span>Other Communications</span>
@@ -60,8 +62,10 @@
           </div>
         </fieldset>
         <div class="grid-x grid-padding-x">
-          <button type="submit">Submit</button>
-          <button type="reset">Reset</button>
+          <div class="cell large-12">
+            <button type="submit">Submit</button>
+            <button class="--clear" type="reset">Reset</button>
+          </div>
         </div>
       </form>
     </main>

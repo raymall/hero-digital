@@ -1,0 +1,41 @@
+.Form {
+  h1 {
+    font-weight: 700;
+  }
+
+  p {
+    margin-top: rem-calc(24);
+    margin-bottom: rem-calc(24);
+    color: $text-primary;
+  }
+
+  &-field {
+    margin-bottom: rem-calc(32);
+
+    label {
+      display: block;
+      width: 100%;
+      margin-bottom: rem-calc(12);
+      color: $text-primary;
+    }
+
+    input:not([type="select"]):not([type="checkbox"]) {
+      width: 100%;
+    }
+
+    select {
+      width: 100%;
+      
+      @include breakpoint(medium) {
+        width: auto;
+      }
+    }
+  }
+  
+  &-field-checkbox {
+    label {
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+  }
+}
