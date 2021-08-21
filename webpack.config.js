@@ -11,7 +11,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const pages = [
   {
-    title: 'Homepage',
+    title: 'Sign Up',
     filename: 'index.html',
     template: './app/src/views/index.html',
   }

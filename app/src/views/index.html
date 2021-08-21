@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title><%= htmlWebpackPlugin.options.title %></title>
     <%= require('html-loader!../partials/head.html') %>
@@ -10,7 +10,7 @@
       <form class="Form grid-container full" action="">
         <div class="grid-x grid-padding-x">
           <div class="cell large-12">
-            <h1>Sign up for email updates</h1>
+            <h1><legend>Sign up for email updates</legend></h1>
             <p>*Indicates Required Field</p>
             <div class="Form-errors form-errors">
               <span>{{field name}} is required</span>
@@ -20,19 +20,19 @@
         <fieldset class="grid-x grid-padding-x">
           <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="first-name">First Name*</label>
-            <input type="text" name="first-name" placeholder="John" required>
+            <input type="text" name="first-name" placeholder="John" autocomplete="name" required>
           </div>
           <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="last-name">Last Name*</label>
-            <input type="text" name="last-name" placeholder="Doe" required>
+            <input type="text" name="last-name" placeholder="Doe" autocomplete="given-name" required>
           </div>
           <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="email-address">Email Address*</label>
-            <input type="email" name="email-address" placeholder="john.doe@gmail.com" required>
+            <input type="email" name="email-address" placeholder="john.doe@gmail.com" autocomplete="email" required>
           </div>
           <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="organization">Organization</label>
-            <input type="text" name="organization" placeholder="">
+            <input type="text" name="organization" placeholder="" autocomplete="organization">
           </div>
           <div class="Form-field cell large-12">
             <label for="eu-resident">EU Resident*</label>
