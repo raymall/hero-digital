@@ -1,0 +1,43 @@
+.form-errors {
+  color: $alert;
+  
+  p,
+  span {
+    color: $alert;
+  }
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+label {
+  font-weight: 600;
+  font-size: rem-calc(16);
+  text-transform: uppercase;
+}
+
+input {
+  height: rem-calc(52);
+  padding: rem-calc(0 20);
+  font-weight: 600;
+  font-size: rem-calc(10);
+  text-transform: uppercase;
+  color: $input-color;
+  outline: 0;
+  border: rem-calc(2) solid $input-border;
+  box-shadow: rem-calc(0 5) 10px rgba($black, 0.2);
+  transition: all 0.15s linear;
+
+  &::placeholder {
+    font-weight: 400;
+  }
+  
+  &:focus,
+  &:active {
+    border-color: $input-border-active;
+    box-shadow: rem-calc(0 8) 10px rgba($black, 0.25);
+  }
+}
