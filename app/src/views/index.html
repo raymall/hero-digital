@@ -7,7 +7,7 @@
   <body class="Homepage">
     <!-- <img src="assets/[image-name].[image-extension]]"/> -->
     <main>
-      <form class="Form grid-container full" action="">
+      <form id="form" class="Form grid-container full" data-parsley-errors-messages-disabled>
         <div class="grid-x grid-padding-x">
           <div class="cell large-12">
             <h1><legend>Sign up for email updates</legend></h1>
@@ -44,26 +44,26 @@
           </div>
           <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
             <label for="advances">
-              <input id="advances" type="checkbox" name="preferences[]">
+              <input id="advances" type="checkbox" name="preferences[]" required data-parsley-multiple="preferences" data-parsley-mincheck="1">
               <span>Advances</span>
             </label>
           </div>
           <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
             <label for="alerts">
-              <input id="alerts" type="checkbox" name="preferences[]">
+              <input id="alerts" type="checkbox" name="preferences[]" data-parsley-multiple="preferences">
               <span>Alerts</span>
             </label>
           </div>
           <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
             <label for="other-communications">
-              <input id="other-communications" type="checkbox" name="preferences[]">
+              <input id="other-communications" type="checkbox" name="preferences[]" data-parsley-multiple="preferences">
               <span>Other Communications</span>
             </label>
           </div>
         </fieldset>
         <div class="grid-x grid-padding-x">
           <div class="Form-buttons cell large-12">
-            <button type="submit">Submit</button>
+            <button type="submit" class="validate">Submit</button>
             <button class="--clear" type="reset">Reset</button>
           </div>
         </div>
