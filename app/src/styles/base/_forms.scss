@@ -5,8 +5,9 @@
   font-weight: 700;
   color: $alert;
   
-  p,
   span {
+    display: block;
+    margin-bottom: rem-calc(6);
     color: $alert;
   }
 }

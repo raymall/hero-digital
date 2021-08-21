@@ -1,65 +1,48 @@
 import $ from 'jquery';
+import forEach from 'lodash/forEach';
 require('parsleyjs');
 
 (function() {
-  // $('#form').on('submit', (e) => {
-  //   e.preventDefault()
-  //   console.log('here')
-  //   let formInstance = $('#form').parsley({
-  //     uiEnabled: false,
-  //     trigger: 'change',
-  //     focus: 'first',
-  //     successClass: "success",
-  //     errorClass: "error"
-  //   })
-  //   if (formInstance.isValid()){
-  //     alert('valid');
-  //   } else {
-  //     alert('is not valid');
-  //   }
-  // })
-
-  // $('#form').on('submit', (e) => {
-  //   console.log('here')
-  //   let formInstance = $('#form').parsley({
-  //     uiEnabled: false,
-  //     trigger: 'change',
-  //     focus: 'first',
-  //     successClass: "success",
-  //     errorClass: "error"
-  //   })
-  //   if (formInstance.isValid()){
-  //     alert('valid');
-  //   } else {
-  //     alert('is not valid');
-  //   }
-  //   e.preventDefault()
-  // })
-
-  $('#form').parsley({
+  let FORM_ERRORS = []
+  let formInstance = $('#form').parsley({
+    focus: 'none',
+    trigger: false,
+    triggerAfterFailure: false,
     successClass: "success",
     errorClass: "error"
   })
-  .on('form:submit', () => {
-    alert('valid');
-    return false; // Don't submit form for this demo
-  });
 
-  $.listen('parsley:field:error', (fieldInstance) => {
-    console.log(fieldInstance);
-  });
+  formInstance.on('form:submit', () => {
+    alert('valid')
+    $('.js-form-errors')
+    .empty()
+    .addClass('visually-hidden')
+    .append(`<p>No errors</p>`)
+    return false;
+  })
 
-  // $('#form').parsley({
-  //   uiEnabled: false,
-  //   focus: 'first',
-  //   successClass: "success",
-  //   errorClass: "error"
-  // }).on('form:validate', function() {
-  //   // var ok = $('.parsley-error').length === 0;
-  //   // $('.bs-callout-info').toggleClass('hidden', !ok);
-  //   // $('.bs-callout-warning').toggleClass('hidden', ok);
-  // })
-  // .on('form:submit', function() {
-  //   return false; // Don't submit form for this demo
-  // });
+  formInstance.on('field:error', (fieldInstance) => {
+    console.log(`<span>${ $(fieldInstance.$element).attr('name') } is required</span>`)
+    FORM_ERRORS.push(`<span>${ $(fieldInstance.$element).attr('name').replace('[]', '') } is required</span>`)
+  })
+
+  formInstance.on('form:validate', (formInstance) => {
+    $('.js-form-errors').empty()
+    FORM_ERRORS = []
+    console.log('validate', formInstance)
+  })
+
+  formInstance.on('form:error', (formInstance) => {
+    $('.js-form-errors').empty()
+    console.log('error', formInstance)
+    
+    forEach(FORM_ERRORS, function(value) {
+      $('.js-form-errors')
+      .removeClass('visually-hidden')
+      .append(value)
+      console.log(value)
+    })
+
+    FORM_ERRORS = []
+  })
 })();
