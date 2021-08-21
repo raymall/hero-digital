@@ -1,0 +1,34 @@
+.Button,
+button {
+  display: inline-block;
+  min-width: rem-calc(160);
+  height: rem-calc(40);
+  padding: rem-calc(0 50);
+  font-weight: 600;
+  font-size: rem-calc(14);
+  text-transform: uppercase;
+  letter-spacing: rem-calc(1);
+  color: $white;
+  appearance: none;
+  outline: 0;
+  border: 0;
+  border-radius: rem-calc(40);
+  background: $purple;
+  box-shadow: rem-calc(0 5) 3px rgba($black, 0.15);
+  transition: all 0.15s linear;
+  cursor: pointer;
+
+  &:hover {
+    background: lighten($purple, 5%);
+    box-shadow: rem-calc(0 8) 10px rgba($black, 0.2);
+  }
+  
+  &.--clear {
+    color: $text-primary;
+    background: $white;
+
+    &:hover {
+      background: $white;
+    }
+  }
+}
