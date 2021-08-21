@@ -43,19 +43,19 @@
           </div>
           <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
             <label for="advances">
-              <input id="advances" type="checkbox" name="Preferences[]" value="Advances" required data-parsley-multiple="preferences" data-parsley-mincheck="1">
+              <input id="advances" type="checkbox" name="Preferences" value="Advances" required data-parsley-multiple="preferences" data-parsley-mincheck="1">
               <span>Advances</span>
             </label>
           </div>
           <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
             <label for="alerts">
-              <input id="alerts" type="checkbox" name="Preferences[]" value="Alerts" data-parsley-multiple="preferences">
+              <input id="alerts" type="checkbox" name="Preferences" value="Alerts" data-parsley-multiple="preferences">
               <span>Alerts</span>
             </label>
           </div>
           <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
             <label for="other-communications">
-              <input id="other-communications" type="checkbox" name="Preferences[]" value="Other Communications" data-parsley-multiple="preferences">
+              <input id="other-communications" type="checkbox" name="Preferences" value="Other Communications" data-parsley-multiple="preferences">
               <span>Other Communications</span>
             </label>
           </div>
@@ -65,6 +65,9 @@
             <button type="submit">Submit</button>
             <button class="--clear" type="reset">Reset</button>
           </div>
+        </div>
+        <div class="Form-response --success visually-hidden">
+          <p class="js-message"></p>
         </div>
       </form>
     </main>

@@ -16,7 +16,6 @@ require('parsleyjs');
   })
 
   let FORM_ERRORS = []
-
   let formInstance = $('#form').parsley({
     focus: 'none',
     trigger: false,
@@ -24,14 +23,16 @@ require('parsleyjs');
     successClass: "success",
     errorClass: "error"
   })
+  let handleResponse = (response) => {
+    console.log('Response', response)
+  }
 
   formInstance.on('field:error', (fieldInstance) => {
-    FORM_ERRORS.push(`<span>${ $(fieldInstance.$element).attr('name').replace('[]', '') } is required</span>`)
+    FORM_ERRORS.push(`<span>${ $(fieldInstance.$element).attr('name') } is required</span>`)
   })
 
-  formInstance.on('form:error', (formInstance) => {
+  formInstance.on('form:error', () => {
     $('.js-form-errors').empty()
-    console.log('error', formInstance)
     
     forEach(FORM_ERRORS, function(value) {
       $('.js-form-errors')
@@ -50,8 +51,10 @@ require('parsleyjs');
     .empty()
     .addClass('visually-hidden')
     .append(`<p>No errors</p>`)
+
+    console.log($('#form').serialize())
     
-    fetch('/api/submission/', {
+    fetch('/api/submission', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -59,14 +62,13 @@ require('parsleyjs');
       body: $('#form').serialize()
     })
     .then(response => {
-      if (!response.ok) throw Error(response.statusText)
       return response.json()
     })
     .then((json) => {
-      // buildList(json)
-      console.log(json)
-    }).catch((errors) => {
-      console.log(errors)
+      handleResponse(json)
+    }).catch((error) => {
+      handleResponse(error)
+      throw Error(error)
     })
 
     return false;
