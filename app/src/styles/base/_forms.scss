@@ -31,7 +31,7 @@ select {
   padding: rem-calc(0 20);
   font-weight: 600;
   font-size: rem-calc(16);
-  text-transform: uppercase;
+  // text-transform: uppercase;
   color: $input-color;
   -webkit-appearance: none;
   appearance: none;
@@ -69,6 +69,7 @@ select {
   &:invalid,
   option[value=""] {
     font-weight: 400;
+    text-transform: uppercase;
   }
 }
 

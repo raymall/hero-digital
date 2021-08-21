@@ -4,6 +4,7 @@ import { createServer } from "miragejs"
 require('parsleyjs');
 
 (function() {
+  // Fake API
   createServer({
     routes() {
       this.post("/api/submission", () => {
@@ -16,6 +17,9 @@ require('parsleyjs');
   })
 
   let FORM_ERRORS = []
+  let formErrorsElem = $('.js-form-errors')
+  let formResponseElem = $('.js-form-response')
+
   let formInstance = $('#form').parsley({
     focus: 'none',
     trigger: false,
@@ -23,37 +27,49 @@ require('parsleyjs');
     successClass: "success",
     errorClass: "error"
   })
-  let handleResponse = (response) => {
-    console.log('Response', response)
+
+  // Handle API response
+  let handleResponse = (response, status) => {
+    if (!status) {
+      formResponseElem.addClass('--error')
+    } else {
+      formResponseElem.removeClass('--error')
+    }
+    $('.js-message').text(response.message)
+    formResponseElem.removeClass('visually-hidden')
   }
 
+  // Handle field errors
   formInstance.on('field:error', (fieldInstance) => {
     FORM_ERRORS.push(`<span>${ $(fieldInstance.$element).attr('name') } is required</span>`)
   })
 
+  // Handle form errors
   formInstance.on('form:error', () => {
-    $('.js-form-errors').empty()
+    formErrorsElem.empty()
     
     forEach(FORM_ERRORS, function(value) {
-      $('.js-form-errors')
+      formErrorsElem
       .removeClass('visually-hidden')
       .append(value)
     })
   })
 
   formInstance.on('form:validate', () => {
-    $('.js-form-errors').empty()
+    formErrorsElem.empty()
     FORM_ERRORS = []
   })
 
+  // Handle form submission
   formInstance.on('form:submit', () => {
-    $('.js-form-errors')
+    formErrorsElem
     .empty()
     .addClass('visually-hidden')
     .append(`<p>No errors</p>`)
 
     console.log($('#form').serialize())
     
+    // API call
     fetch('/api/submission', {
       method: 'POST',
       headers: {
@@ -65,9 +81,12 @@ require('parsleyjs');
       return response.json()
     })
     .then((json) => {
-      handleResponse(json)
+      handleResponse(json, true)
     }).catch((error) => {
-      handleResponse(error)
+      handleResponse({ 
+        "status": "error", 
+        "message": "Invalid Subscription request." 
+      }, false)
       throw Error(error)
     })
 
