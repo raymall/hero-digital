@@ -9,7 +9,7 @@
       <form id="form" class="Form grid-container full" aria-label="Sign Up" data-parsley-errors-messages-disabled>
         <div class="grid-x grid-padding-x">
           <div class="cell large-12">
-            <h1 role="heading">Sign up for email updates</h1>
+            <h1>Sign up for email updates</h1>
             <p>*Indicates Required Field</p>
             <div class="Form-errors form-errors js-form-errors visually-hidden">
               <p>No errors</p>
@@ -20,15 +20,15 @@
           <legend class="visually-hidden">Sign up for email updates</legend>
           <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="FirstName">First Name*</label>
-            <input id="FirstName" type="text" aria-labelledby="First Name" name="First Name" autocomplete="name" tabindex="0" data-parsley-trigger-after-failure="change" required aria-required>
+            <input id="FirstName" type="text" aria-labelledby="FirstName" name="First Name" autocomplete="name" tabindex="0" data-parsley-trigger-after-failure="change" required aria-required>
           </div>
           <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="LastName">Last Name*</label>
-            <input id="LastName" type="text" aria-labelledby="Last Name" name="Last Name" autocomplete="given-name" tabindex="1" data-parsley-trigger-after-failure="focusout" required aria-required>
+            <input id="LastName" type="text" aria-labelledby="LastName" name="Last Name" autocomplete="given-name" tabindex="1" data-parsley-trigger-after-failure="focusout" required aria-required>
           </div>
           <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="EmailAddress">Email Address*</label>
-            <input id="EmailAddress" type="email" aria-labelledby="Email Address" name="Email Address" autocomplete="email" tabindex="2" data-parsley-trigger-after-failure="focusout" required aria-required>
+            <input id="EmailAddress" type="email" aria-labelledby="EmailAddress" name="Email Address" autocomplete="email" tabindex="2" data-parsley-trigger-after-failure="focusout" required aria-required>
           </div>
           <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="Organization">Organization</label>
@@ -36,7 +36,7 @@
           </div>
           <div class="Form-field cell large-12">
             <label for="EUResident">EU Resident*</label>
-            <select id="EUResident" aria-labelledby="EU Resident" name="EU Resident" tabindex="4" required aria-required>
+            <select id="EUResident" aria-labelledby="EUResident" name="EU Resident" tabindex="4" required aria-required>
               <option value="">- Select One -</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -56,15 +56,15 @@
           </div>
           <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
             <label for="OtherCommunications">
-              <input id="OtherCommunications" type="checkbox" aria-labelledby="Other Communications" name="Preferences" tabindex="7" value="Other Communications" data-parsley-multiple="preferences">
+              <input id="OtherCommunications" type="checkbox" aria-labelledby="OtherCommunications" name="Preferences" tabindex="7" value="Other Communications" data-parsley-multiple="preferences">
               <span>Other Communications</span>
             </label>
           </div>
         </fieldset>
         <div class="grid-x grid-padding-x">
           <div class="Form-buttons cell large-12">
-            <button type="submit" aria-label="Submit" tabindex="8" role="button">Submit</button>
-            <button class="--clear" type="reset" aria-label="Reset" tabindex="9" role="button">Reset</button>
+            <button type="submit" aria-label="Submit" tabindex="8">Submit</button>
+            <button class="--clear" type="reset" aria-label="Reset" tabindex="9">Reset</button>
           </div>
         </div>
         <div class="Form-response --success js-form-response visually-hidden">
@@ -72,6 +72,5 @@
         </div>
       </form>
     </main>
-    <%= require('html-loader!../partials/footer.html') %>
   </body>
 </html>
