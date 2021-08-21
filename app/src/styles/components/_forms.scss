@@ -38,4 +38,27 @@
       cursor: pointer;
     }
   }
+
+  &-buttons {
+    margin-top: rem-calc(32);
+      
+    @include breakpoint(medium) {
+      margin-top: rem-calc(64);
+    }
+
+    button {
+      width: 100%;
+      margin-bottom: rem-calc(20);
+      
+      @include breakpoint(medium) {
+        width: auto;
+        margin-right: rem-calc(20);
+      }
+
+      &:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
 }
