@@ -1,0 +1,64 @@
+// background-image: url('../assets/[image-name].[image-extension]');
+
+/*===============
+  VENDORS
+===============*/
+@import "~foundation-sites/scss/foundation";
+@import "vendors/foundation-settings";
+@include foundation-xy-grid-classes(
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: true,
+  $block-grid: true,
+  $collapse: true,
+  $offset: true,
+  $vertical-grid: true,
+  $frame-grid: true
+);
+
+/*===============
+  SETTINGS
+===============*/
+@import 'settings/colors';
+@import 'settings/fonts';
+
+/*===============
+  UTILITIES
+===============*/
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/helpers';
+
+/*===============
+  BASE
+===============*/
+body {
+  margin: 0;
+  padding: 0;
+  font-size: rem-calc(16);
+  font-family: sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@import 'base/reset';
+@import 'base/setup';
+@import 'base/print';
+@import 'base/typography';
+@import 'base/media';
+@import 'base/forms';
+@import 'base/tables';
+
+/*===============
+  COMPONENTS
+===============*/
+@import 'components/buttons';
+
+/*===============
+  VIEWS
+===============*/
+@import 'views/index';
