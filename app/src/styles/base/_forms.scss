@@ -50,6 +50,11 @@ select {
     border-color: $input-border-active;
     box-shadow: rem-calc(0 8) 10px rgba($black, 0.25);
   }
+
+  &.error {
+    border-color: $input-error-border;
+    background-color: $input-error-bg;
+  }
 }
 
 select {
