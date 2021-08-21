@@ -67,7 +67,7 @@ require('parsleyjs');
     .addClass('visually-hidden')
     .append(`<p>No errors</p>`)
 
-    console.log($('#form').serialize())
+    console.log(decodeURI($('#form').serialize()).replaceAll(' ', ''))
     
     // API call
     fetch('/api/submission', {
@@ -75,7 +75,7 @@ require('parsleyjs');
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      body: $('#form').serialize()
+      body: decodeURI($('#form').serialize()).replaceAll(' ', '')
     })
     .then(response => {
       return response.json()

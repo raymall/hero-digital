@@ -54,6 +54,12 @@ select {
     box-shadow: rem-calc(0 8) 10px rgba($black, 0.25);
   }
 
+  &:disabled,
+  &.disabled {
+    border-color: $input-disable-border;
+    pointer-events: none;
+  }
+
   &.error {
     border-color: $input-error-border;
     background-color: $input-error-bg;

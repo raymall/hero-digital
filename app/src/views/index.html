@@ -6,10 +6,10 @@
   </head>
   <body class="Homepage">
     <main>
-      <form id="form" class="Form grid-container full" data-parsley-errors-messages-disabled>
+      <form id="form" class="Form grid-container full" aria-label="Sign Up" data-parsley-errors-messages-disabled>
         <div class="grid-x grid-padding-x">
           <div class="cell large-12">
-            <h1><legend>Sign up for email updates</legend></h1>
+            <h1 role="heading">Sign up for email updates</h1>
             <p>*Indicates Required Field</p>
             <div class="Form-errors form-errors js-form-errors visually-hidden">
               <p>No errors</p>
@@ -17,53 +17,54 @@
           </div>
         </div>
         <fieldset class="grid-x grid-padding-x">
+          <legend class="visually-hidden">Sign up for email updates</legend>
           <div class="Form-field cell samll-12 medium-6 large-6">
-            <label for="First Name">First Name*</label>
-            <input type="text" name="First Name" autocomplete="name" data-parsley-trigger-after-failure="change" required>
+            <label for="FirstName">First Name*</label>
+            <input id="FirstName" type="text" aria-labelledby="First Name" name="First Name" autocomplete="name" tabindex="0" data-parsley-trigger-after-failure="change" required aria-required>
           </div>
           <div class="Form-field cell samll-12 medium-6 large-6">
-            <label for="Last Name">Last Name*</label>
-            <input type="text" name="Last Name" autocomplete="given-name" data-parsley-trigger-after-failure="focusout" required>
+            <label for="LastName">Last Name*</label>
+            <input id="LastName" type="text" aria-labelledby="Last Name" name="Last Name" autocomplete="given-name" tabindex="1" data-parsley-trigger-after-failure="focusout" required aria-required>
           </div>
           <div class="Form-field cell samll-12 medium-6 large-6">
-            <label for="Email Address">Email Address*</label>
-            <input type="email" name="Email Address" autocomplete="email" data-parsley-trigger-after-failure="focusout" required>
+            <label for="EmailAddress">Email Address*</label>
+            <input id="EmailAddress" type="email" aria-labelledby="Email Address" name="Email Address" autocomplete="email" tabindex="2" data-parsley-trigger-after-failure="focusout" required aria-required>
           </div>
           <div class="Form-field cell samll-12 medium-6 large-6">
             <label for="Organization">Organization</label>
-            <input type="text" name="Organization" placeholder="" autocomplete="organization">
+            <input id="Organization" disabled type="text" aria-labelledby="Organization" name="Organization" placeholder="" autocomplete="organization" tabindex="3">
           </div>
           <div class="Form-field cell large-12">
-            <label for="EU Resident">EU Resident*</label>
-            <select name="EU Resident" id="" required>
+            <label for="EUResident">EU Resident*</label>
+            <select id="EUResident" aria-labelledby="EU Resident" name="EU Resident" tabindex="4" required aria-required>
               <option value="">- Select One -</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
           </div>
           <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
-            <label for="advances">
-              <input id="advances" type="checkbox" name="Preferences" value="Advances" required data-parsley-multiple="preferences" data-parsley-mincheck="1">
+            <label for="Advances">
+              <input id="Advances" type="checkbox" aria-labelledby="Advances" name="Preferences" tabindex="5" value="Advances" required aria-required data-parsley-multiple="preferences" data-parsley-mincheck="1">
               <span>Advances</span>
             </label>
           </div>
           <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
-            <label for="alerts">
-              <input id="alerts" type="checkbox" name="Preferences" value="Alerts" data-parsley-multiple="preferences">
+            <label for="Alerts">
+              <input id="Alerts" type="checkbox" aria-labelledby="Alerts" name="Preferences" tabindex="6" value="Alerts" data-parsley-multiple="preferences">
               <span>Alerts</span>
             </label>
           </div>
           <div class="Form-field Form-field-checkbox cell samll-12 medium-6 large-6">
-            <label for="other-communications">
-              <input id="other-communications" type="checkbox" name="Preferences" value="Other Communications" data-parsley-multiple="preferences">
+            <label for="OtherCommunications">
+              <input id="OtherCommunications" type="checkbox" aria-labelledby="Other Communications" name="Preferences" tabindex="7" value="Other Communications" data-parsley-multiple="preferences">
               <span>Other Communications</span>
             </label>
           </div>
         </fieldset>
         <div class="grid-x grid-padding-x">
           <div class="Form-buttons cell large-12">
-            <button type="submit">Submit</button>
-            <button class="--clear" type="reset">Reset</button>
+            <button type="submit" aria-label="Submit" tabindex="8" role="button">Submit</button>
+            <button class="--clear" type="reset" aria-label="Reset" tabindex="9" role="button">Reset</button>
           </div>
         </div>
         <div class="Form-response --success js-form-response visually-hidden">
