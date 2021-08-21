@@ -1,6 +1,11 @@
 // background-image: url('../assets/[image-name].[image-extension]');
 
 /*===============
+  RESET
+===============*/
+@import 'base/reset';
+
+/*===============
   VENDORS
 ===============*/
 @import "~foundation-sites/scss/foundation";
@@ -45,8 +50,6 @@ body {
     box-sizing: border-box;
   }
 }
-
-@import 'base/reset';
 @import 'base/setup';
 @import 'base/print';
 @import 'base/typography';

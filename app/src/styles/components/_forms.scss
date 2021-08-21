@@ -4,18 +4,16 @@
   }
 
   p {
-    margin-top: rem-calc(24);
-    margin-bottom: rem-calc(24);
     color: $text-primary;
   }
 
   &-field {
-    margin-bottom: rem-calc(32);
+    margin-bottom: rem-calc(38);
 
     label {
       display: block;
       width: 100%;
-      margin-bottom: rem-calc(12);
+      margin-bottom: rem-calc(16);
       color: $text-primary;
     }
 

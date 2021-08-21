@@ -1,4 +1,6 @@
 h1 {
+  margin-top: rem-calc(32);
+  margin-bottom: rem-calc(32);
   font-weight: 700;
   font-size: rem-calc(24);
 }
@@ -7,4 +9,9 @@ p,
 span {
   font-weight: 400;
   font-size: rem-calc(16);
+}
+
+p {
+  margin-top: rem-calc(24);
+  margin-bottom: rem-calc(32);
 }
