@@ -81,6 +81,7 @@ require('parsleyjs');
       return response.json()
     })
     .then((json) => {
+      console.log(json)
       handleResponse(json, true)
     }).catch((error) => {
       handleResponse({ 
