@@ -30,8 +30,6 @@
 /*===============
   UTILITIES
 ===============*/
-@import 'utils/functions';
-@import 'utils/mixins';
 @import 'utils/helpers';
 
 /*===============
@@ -50,12 +48,8 @@ body {
     box-sizing: border-box;
   }
 }
-@import 'base/setup';
-@import 'base/print';
 @import 'base/typography';
-@import 'base/media';
 @import 'base/forms';
-@import 'base/tables';
 
 /*===============
   COMPONENTS
